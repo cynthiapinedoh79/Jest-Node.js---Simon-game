@@ -71,6 +71,7 @@ describe("gameplay works correctly", () => {
         addTurn();
     });
     afterEach(() => {
+        jest.clearAllMocks();      //clears window.alert and other mocks
         game.score = 0;
         game.currentGame = [];
         game.playerMoves = [];
@@ -97,6 +98,7 @@ describe("gameplay works correctly", () => {
     test("should call an alert if the move is wrong", () => {
         game.playerMoves.push("wrong");
         playerTurn();
-        expect(window.alert).toBeCalledWith("Wrong move!");
+        expect(window.alert).toHaveBeenCalledWith("Wrong move!");
+
     });
 });

@@ -10,9 +10,9 @@ function newGame() {
     game.currentGame = [];
     game.playerMoves = [];
     game.score = 0;
-    
+
     for (let circle of document.getElementsByClassName("circle")) {
-        if (circle.setAttribute("data-listener") !== "true") {
+        if (circle.getAttribute("data-listener") !== "true") {
             circle.addEventListener("click", (e) => {
                 let move = e.target.getAttribute("id");
                 lightsOn(move);

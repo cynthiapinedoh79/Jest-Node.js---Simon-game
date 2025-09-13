@@ -4,7 +4,6 @@
 
 const { game, newGame, showScore, addTurn, lightsOn, showTurns} = require("../game");
 
-
 beforeAll(() => {
     let fs = require("fs");
     let fileContents = fs.readFileSync("index.html", "utf-8");
